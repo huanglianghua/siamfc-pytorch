@@ -1,5 +1,7 @@
 # SiamFC - PyTorch
-PyTorch port of the tracking method described in the paper [*Fully-Convolutional Siamese nets for object tracking*](https://www.robots.ox.ac.uk/~luca/siamese-fc.html). (The code structure as well as many functions are directly borrowed from [siamfc-tf](https://github.com/torrvision/siamfc-tf))
+PyTorch port of the tracking method described in the paper [*Fully-Convolutional Siamese nets for object tracking*](https://www.robots.ox.ac.uk/~luca/siamese-fc.html).
+
+(The code structure as well as many functions are directly borrowed from [siamfc-tf](https://github.com/torrvision/siamfc-tf))
 
 In particular, it is the improved version presented as baseline in [*End-to-end representation learning for Correlation Filter based tracking*](https://www.robots.ox.ac.uk/~luca/cfnet.html), which achieves state-of-the-art performance at high framerate. The other methods presented in the paper (similar performance, shallower network) haven't been ported yet.
 
