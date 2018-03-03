@@ -1,0 +1,12 @@
+{
+	"join_method": "xcorr",
+	"net": "baseline-conv5_e55.mat",
+	"net_gray": "",
+	"windowing": "cosine_sum",
+	"exemplar_sz": 127,
+	"search_sz": 255,
+	"score_sz": 33,
+	"tot_stride": 4,
+	"context": 0.5,
+	"pad_with_image_mean": true
+}

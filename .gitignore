@@ -1,0 +1,9 @@
+data/
+pretrained/
+__pycache__/
+*.ipynb_checkpoints
+*.pyc
+*.swp
+notebooks/*
+.idea
+

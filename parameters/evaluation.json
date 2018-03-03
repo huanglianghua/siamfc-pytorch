@@ -1,0 +1,8 @@
+{
+	"n_subseq": 1,
+	"dist_threshold": 20,
+	"stop_on_failure": 0,
+	"dataset": "vot2016",
+	"video": "all",
+	"start_frame": 0
+}
