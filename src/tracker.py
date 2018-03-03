@@ -1,6 +1,3 @@
-
-# import tensorflow as tf
-# print('Using Tensorflow '+tf.__version__)
 import matplotlib.pyplot as plt
 import sys
 # sys.path.append('../')
@@ -129,15 +126,6 @@ def tracker(hp, run, design, frame_name_list, pos_x, pos_y, target_w, target_h, 
 
         t_elapsed = time.time() - t_start
         speed = num_frames / t_elapsed
-
-        # Finish off the filename queue coordinator.
-        # coord.request_stop()
-        # coord.join(threads) 
-
-        # from tensorflow.python.client import timeline
-        # trace = timeline.Timeline(step_stats=run_metadata.step_stats)
-        # trace_file = open('timeline-search.ctf.json', 'w')
-        # trace_file.write(trace.generate_chrome_trace_format())
 
     plt.close('all')
 
