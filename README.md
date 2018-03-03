@@ -5,7 +5,7 @@ PyTorch port of the tracking method described in the paper [*Fully-Convolutional
 
 In particular, it is the improved version presented as baseline in [*End-to-end representation learning for Correlation Filter based tracking*](https://www.robots.ox.ac.uk/~luca/cfnet.html), which achieves state-of-the-art performance at high framerate. The other methods presented in the paper (similar performance, shallower network) haven't been ported yet.
 
-**Note1**: results should be similar (i.e. slightly better or worse) than our MatConvNet implementation. However, for direct comparison please refer to the precomputed results available in the project pages or to the original code, which you can find pinned in [my GitHub](https://github.com/bertinetto).
+**Note1**: results should be similar (i.e. slightly better or worse) than the MatConvNet implementation. However, for direct comparison please refer to the precomputed results available in the project pages or to the original code, which you can find pinned in [Bertinetto's Github](https://github.com/bertinetto).
 
 **Note2**: at the moment this code only allows to use a pretrained net in forward mode.
 
@@ -34,7 +34,7 @@ Install PyTorch follow the instructions at [PyTorch website](http://pytorch.org/
 `python run_tracker_evaluation.py`
 
 ## References
-If you find our work useful, please consider citing
+If you find this work useful, please consider citing
 
 ↓ [Original method] ↓
 ```
