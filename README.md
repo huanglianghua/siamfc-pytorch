@@ -9,8 +9,8 @@ In particular, it is the improved version presented as baseline in [*End-to-end 
 
 **Note2**: at the moment this code only allows to use a pretrained net in forward mode.
 
-## Python dependencies
-1) OpenCV python
+## Preparations for running the code
+1) Pip install OpenCV python
 `pip install opencv-python`
 1) PyTorch
 Install PyTorch follow the instructions at [PyTorch website](http://pytorch.org/).
