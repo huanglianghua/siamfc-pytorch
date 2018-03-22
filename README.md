@@ -13,36 +13,25 @@ In particular, it is the improved version presented as baseline in [*End-to-end 
 ## Preparations for running the code
 
 1) Install `opencv-python`:
-
-```python
-pip install opencv-python
-```
-
+  ```python
+  pip install opencv-python
+  ```
 1) Install PyTorch:
-
-Follow the instructions at [PyTorch website](http://pytorch.org/).
-
+  Follow the instructions at [PyTorch website](http://pytorch.org/).
 1) Install SciPy:
-
-```python
-pip install scipy
-```
-
+  ```python
+  pip install scipy
+  ```
 1) Clone the repository
-
-```bash
-git clone https://github.com/huanglianghua/siamfc-pytorch.git
-```
-
+  ```bash
+  git clone https://github.com/huanglianghua/siamfc-pytorch.git
+  ```
 1) Download pretrained model:
-
-```bash
-cd siamfc-pytorch
-mkdir pretrained data
-```
-
-Download the [pretrained networks](https://drive.google.com/file/d/0B7Awq_aAemXQZ3JTc2l6TTZlQVE/view) in `pretrained` and unzip the archive (we will only use `baseline-conv5_e55.mat`).
-
+  ```bash
+  cd siamfc-pytorch
+  mkdir pretrained data
+  ```
+  Download the [pretrained networks](https://drive.google.com/file/d/0B7Awq_aAemXQZ3JTc2l6TTZlQVE/view) in `pretrained` and unzip the archive (we will only use `baseline-conv5_e55.mat`).
 1) Download [VOT dataset](http://www.votchallenge.net/vot2016/dataset.html) in `data` and unzip the archive.
 
 
