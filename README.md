@@ -1,5 +1,4 @@
 # SiamFC - PyTorch
-
 PyTorch port of the tracking method described in the paper [*Fully-Convolutional Siamese nets for object tracking*](https://www.robots.ox.ac.uk/~luca/siamese-fc.html).
 
 (The code structure as well as many functions are directly borrowed from [siamfc-tf](https://github.com/torrvision/siamfc-tf))
@@ -11,25 +10,17 @@ In particular, it is the improved version presented as baseline in [*End-to-end 
 **Note2**: at the moment this code only allows to use a pretrained net in forward mode.
 
 ## Preparations for running the code
-
-1) Install `opencv-python`:
+1) Install opencv-python:
 `pip install opencv-python`
 1) Install PyTorch:
-  Follow the instructions at [PyTorch website](http://pytorch.org/).
+follow the instructions at [PyTorch website](http://pytorch.org/).
 1) Install SciPy:
-  ```python
-  pip install scipy
-  ```
+`pip install scipy`
 1) Clone the repository
-  ```bash
-  git clone https://github.com/huanglianghua/siamfc-pytorch.git
-  ```
-1) Download pretrained model:
-  ```bash
-  cd siamfc-pytorch
-  mkdir pretrained data
-  ```
-  Download the [pretrained networks](https://drive.google.com/file/d/0B7Awq_aAemXQZ3JTc2l6TTZlQVE/view) in `pretrained` and unzip the archive (we will only use `baseline-conv5_e55.mat`).
+`git clone https://github.com/huanglianghua/siamfc-pytorch.git`
+1) `cd siamfc-pytorch`
+1) `mkdir pretrained data`
+1) Download the [pretrained networks](https://drive.google.com/file/d/0B7Awq_aAemXQZ3JTc2l6TTZlQVE/view) in `pretrained` and unzip the archive (we will only use `baseline-conv5_e55.mat`)
 1) Download [VOT dataset](http://www.votchallenge.net/vot2016/dataset.html) in `data` and unzip the archive.
 
 
@@ -66,4 +57,3 @@ If you find this work useful, please consider citing
 ## License
 This code can be freely used for personal, academic, or educational purposes.
 Please contact us for commercial use.
-
