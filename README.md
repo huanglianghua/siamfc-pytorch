@@ -13,9 +13,7 @@ In particular, it is the improved version presented as baseline in [*End-to-end 
 ## Preparations for running the code
 
 1) Install `opencv-python`:
-  ```python
-  pip install opencv-python
-  ```
+`pip install opencv-python`
 1) Install PyTorch:
   Follow the instructions at [PyTorch website](http://pytorch.org/).
 1) Install SciPy:
