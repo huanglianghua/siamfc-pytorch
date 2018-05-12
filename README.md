@@ -1,6 +1,6 @@
 # SiamFC - PyTorch
 
-*UPDATE: this repo only implements the tracking part. For training code of SiamFC and more organized implementation, please refer to my new repo [open-vot](https://github.com/huanglianghua/open-vot)*
+> *UPDATE: this repo only implements the tracking part. For training code of SiamFC and more organized implementation, please refer to my new repo [open-vot](https://github.com/huanglianghua/open-vot).*
 
 PyTorch port of the tracking method described in the paper [*Fully-Convolutional Siamese nets for object tracking*](https://www.robots.ox.ac.uk/~luca/siamese-fc.html).
 
