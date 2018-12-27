@@ -1,62 +1,64 @@
 # SiamFC - PyTorch
 
-> *UPDATE: this repo only implements the tracking part. For training code of SiamFC and more organized implementation, please refer to my new repo [open-vot](https://github.com/huanglianghua/open-vot).*
+A clean PyTorch implementation of SiamFC tracker described in paper [Fully-Convolutional Siamese Networks for Object Tracking](https://www.robots.ox.ac.uk/~luca/siamese-fc.html). The code is evaluated on 7 tracking datasets ([OTB (2013/2015)](http://cvlab.hanyang.ac.kr/tracker_benchmark/index.html), [VOT (2018)](http://votchallenge.net), [DTB70](https://github.com/flyers/drone-tracking), [TColor128](http://www.dabi.temple.edu/~hbling/data/TColor-128/TColor-128.html), [NfS](http://ci2cv.net/nfs/index.html) and [UAV123](https://ivul.kaust.edu.sa/Pages/pub-benchmark-simulator-uav.aspx)), using the [GOT-10k toolkit](https://github.com/got-10k/toolkit).
 
-PyTorch port of the tracking method described in the paper [*Fully-Convolutional Siamese nets for object tracking*](https://www.robots.ox.ac.uk/~luca/siamese-fc.html).
+## Performance
 
-(The code structure as well as many functions are directly borrowed from [siamfc-tf](https://github.com/torrvision/siamfc-tf))
+### GOT-10k
 
-In particular, it is the improved version presented as baseline in [*End-to-end representation learning for Correlation Filter based tracking*](https://www.robots.ox.ac.uk/~luca/cfnet.html), which achieves state-of-the-art performance at high framerate. The other methods presented in the paper (similar performance, shallower network) haven't been ported yet.
+| Dataset | AO    | SR<sub>0.50</sub> | SR<sub>0.75</sub> |
+|:------- |:-----:|:-----------------:|:-----------------:|
+| GOT-10k | 0.355 | 0.390             | 0.118             |
 
-**Note1**: results should be similar (i.e. slightly better or worse) than the MatConvNet implementation. However, for direct comparison please refer to the precomputed results available in the project pages or to the original code, which you can find pinned in [Bertinetto's Github](https://github.com/bertinetto).
+The scores are comparable with state-of-the-art results on [GOT-10k leaderboard](http://47.94.140.97/leaderboard).
 
-**Note2**: at the moment this code only allows to use a pretrained net in forward mode.
+### OTB / UAV123 / DTB70 / TColor128 / NfS
 
-## Preparations for running the code
-1) Install opencv-python:
-`pip install opencv-python`
-1) Install PyTorch:
-follow the instructions at [PyTorch website](http://pytorch.org/).
-1) Install SciPy:
-`pip install scipy`
-1) Clone the repository
-`git clone https://github.com/huanglianghua/siamfc-pytorch.git`
-1) `cd siamfc-pytorch`
-1) `mkdir pretrained data`
-1) Download the [pretrained networks](https://drive.google.com/file/d/0B7Awq_aAemXQZ3JTc2l6TTZlQVE/view) in `pretrained` and unzip the archive (we will only use `baseline-conv5_e55.mat`)
-1) Download [VOT dataset](http://www.votchallenge.net/vot2016/dataset.html) in `data` and unzip the archive.
+| Dataset       | Success Score    | Precision Score |
+|:-----------   |:----------------:|:----------------:|
+| OTB2013       | 0.589            | 0.781            |
+| OTB2015       | 0.578            | 0.765            |
+| UAV123        | 0.523            | 0.731            |
+| UAV20L        | 0.423            | 0.572            |
+| DTB70         | 0.493            | 0.731            |
+| TColor128     | 0.510            | 0.691            |
+| NfS (30 fps)  | -                | -                |
+| NfS (240 fps) | 0.520            | 0.624            |
 
+### VOT2018
+
+| Dataset       | Accuracy    | Robustness (unnormalized) |
+|:-----------   |:-----------:|:-------------------------:|
+| VOT2018       | 0.502       | 37.25                     |
+
+## Dependencies
+
+Install PyTorch, opencv-python and GOT-10k toolkit:
+
+```bash
+pip install torch
+pip install opencv-python
+pip install --upgrade git+https://github.com/got-10k/toolkit.git@master
+```
+
+[GOT-10k toolkit](https://github.com/got-10k/toolkit) is a visual tracking toolkit that implements evaluation metrics and tracking pipelines for 7 popular tracking datasets.
 
 ## Running the tracker
-1) Set `video` from `parameters.evaluation` to `"all"` or to a specific sequence (e.g. `"ball1"`)
-1) See if you are happy with the default parameters in `parameters/hyperparameters.json`
-1) Optionally enable visualization in `parameters/run.json`
-1) Call the main script (within an active virtualenv session)
-`python run_tracker_evaluation.py`
 
-## References
-If you find this work useful, please consider citing
+In the root directory of `siamfc-pytorch`:
 
-↓ [Original method] ↓
+1. Download pretrained `model.pth` from [Baidu Yun](https://pan.baidu.com/s/1TT7ebFho63Lw2D7CXLqwjQ) or [Google Drive](https://drive.google.com/open?id=1Qu5K8bQhRAiexKdnwzs39lOko3uWxEKm), and put the file under `pretrained/siamfc`.
+
+2. Create a symbolic link `data` to your datasets folder (e.g., `data/OTB`, `data/UAV123`, `data/GOT-10k`):
+
 ```
-@inproceedings{bertinetto2016fully,
-  title={Fully-Convolutional Siamese Networks for Object Tracking},
-  author={Bertinetto, Luca and Valmadre, Jack and Henriques, Jo{\~a}o F and Vedaldi, Andrea and Torr, Philip H S},
-  booktitle={ECCV 2016 Workshops},
-  pages={850--865},
-  year={2016}
-}
-```
-↓ [Improved method and evaluation] ↓
-```
-@article{valmadre2017end,
-  title={End-to-end representation learning for Correlation Filter based tracking},
-  author={Valmadre, Jack and Bertinetto, Luca and Henriques, Jo{\~a}o F and Vedaldi, Andrea and Torr, Philip HS},
-  journal={arXiv preprint arXiv:1704.06036},
-  year={2017}
-}
+ln -s ./data /path/to/your/data/folder
 ```
 
-## License
-This code can be freely used for personal, academic, or educational purposes.
-Please contact us for commercial use.
+3. Run:
+
+```
+python run_tracking.py
+```
+
+By default, the tracking experiments will be executed and evaluated over all 7 datasets. Comment lines in `run_tracker.py` as you wish if you need to skip some experiments.
