@@ -10,7 +10,7 @@ A clean PyTorch implementation of SiamFC tracker described in paper [Fully-Convo
 |:------- |:-----:|:-----------------:|:-----------------:|
 | GOT-10k | 0.355 | 0.390             | 0.118             |
 
-The scores are comparable with state-of-the-art results on [GOT-10k leaderboard](http://47.94.140.97/leaderboard).
+The scores are comparable with state-of-the-art results on [GOT-10k leaderboard](http://got-10k.aitestunion.com/leaderboard).
 
 ### OTB / UAV123 / DTB70 / TColor128 / NfS
 
