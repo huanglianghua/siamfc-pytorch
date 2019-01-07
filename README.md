@@ -36,9 +36,7 @@ The scores are comparable with state-of-the-art results on [GOT-10k leaderboard]
 Install PyTorch, opencv-python and GOT-10k toolkit:
 
 ```bash
-pip install torch
-pip install opencv-python
-pip install --upgrade git+https://github.com/got-10k/toolkit.git@master
+pip install torch opencv-python got10k
 ```
 
 [GOT-10k toolkit](https://github.com/got-10k/toolkit) is a visual tracking toolkit that implements evaluation metrics and tracking pipelines for 7 popular tracking datasets.
@@ -58,7 +56,17 @@ ln -s ./data /path/to/your/data/folder
 3. Run:
 
 ```
-python run_tracking.py
+python test.py
 ```
 
 By default, the tracking experiments will be executed and evaluated over all 7 datasets. Comment lines in `run_tracker.py` as you wish if you need to skip some experiments.
+
+## Training the tracker
+
+1. Assume the GOT-10k dataset is located at `data/GOT-10K`.
+
+2. Run:
+
+```
+python train.py
+```

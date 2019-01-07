@@ -6,20 +6,20 @@ import torch
 from torch.utils.data import DataLoader
 
 from got10k.datasets import ImageNetVID, GOT10k
-from data_utils import Pairwise
+from pairwise import Pairwise
 from siamfc import TrackerSiamFC
 
 
 if __name__ == '__main__':
     # setup dataset
-    name = 'VID'
+    name = 'GOT-10k'
     assert name in ['VID', 'GOT-10k']
-    if name == 'VID':
-        root_dir = 'data/ILSVRC'
-        seq_dataset = ImageNetVID(root_dir, subset=('train', 'val'))
-    elif name == 'GOT-10k':
+    if name == 'GOT-10k':
         root_dir = 'data/GOT-10k'
         seq_dataset = GOT10k(root_dir, subset='train')
+    elif name == 'VID':
+        root_dir = 'data/ILSVRC'
+        seq_dataset = ImageNetVID(root_dir, subset=('train', 'val'))
     pair_dataset = Pairwise(seq_dataset)
 
     # setup data loader
