@@ -59,7 +59,7 @@ ln -s ./data /path/to/your/data/folder
 python test.py
 ```
 
-By default, the tracking experiments will be executed and evaluated over all 7 datasets. Comment lines in `run_tracker.py` as you wish if you need to skip some experiments.
+By default, the tracking experiments will be executed and evaluated over all 7 datasets. Comment lines in `test.py` as you wish if you need to skip some experiments.
 
 ## Training the tracker
 
