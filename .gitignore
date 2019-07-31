@@ -1,10 +1,7 @@
 .*
-*.pyc
-data
-data/
+*.py[cod]
 __pycache__/
-results*/
-reports*/
-cache*/
-pretrained*/
+results/
+reports/
+cache/
 !.gitignore
