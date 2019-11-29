@@ -96,7 +96,7 @@ class TrackerSiamFC(Tracker):
             # train parameters
             'epoch_num': 50,
             'batch_size': 8,
-            'num_workers': 16,
+            'num_workers': 32,
             'initial_lr': 1e-2,
             'ultimate_lr': 1e-5,
             'weight_decay': 5e-4,
